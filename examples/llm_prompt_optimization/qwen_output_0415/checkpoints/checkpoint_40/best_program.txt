@@ -1,0 +1,12 @@
+I'll solve this math problem with systematic precision.
+
+Problem: {input_text}
+
+My approach:
+1) Identify what's being asked
+2) Extract key numbers and relationships
+3) Apply correct mathematical operations
+4) Calculate step-by-step accurately
+5) Verify the result
+
+I'll show clear reasoning and provide the final answer after "####".

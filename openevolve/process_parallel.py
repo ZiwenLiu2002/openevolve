@@ -8,6 +8,9 @@ import multiprocessing as mp
 import pickle
 import signal
 import time
+import json
+import os
+
 from concurrent.futures import Future, ProcessPoolExecutor
 from concurrent.futures import TimeoutError as FutureTimeoutError
 from dataclasses import asdict, dataclass
@@ -17,7 +20,12 @@ from typing import Any, Dict, List, Optional, Tuple
 from openevolve.config import Config
 from openevolve.database import Program, ProgramDatabase
 from openevolve.utils.metrics_utils import safe_numeric_average
+import multiprocessing as mp
 
+try:
+    mp.set_start_method("spawn", force=True)
+except RuntimeError:
+    pass
 logger = logging.getLogger(__name__)
 
 
@@ -34,6 +42,70 @@ class SerializableResult:
     iteration: int = 0
     error: Optional[str] = None
 
+def format_stage1_queues_for_system(
+    path: str,
+    include_worst: bool = False,
+    best_n: int = 5,
+    worst_n: int = 5,
+    max_chars_each: int = 700,
+) -> str:
+    if not path or not os.path.exists(path):
+        return ""
+
+    with open(path, "r") as f:
+        data = json.load(f)
+
+    def trunc(s: str) -> str:
+        s = (s or "").strip()
+        if len(s) <= max_chars_each:
+            return s
+        return s[:max_chars_each] + "\n...[TRUNCATED]..."
+
+    lines = []
+
+    best = (data.get("best") or [])[:best_n]
+    if best:
+        lines.append("Stage1 BEST prompt leaderboard:")
+        for i, it in enumerate(best, 1):
+            lines.append(
+                f"#{i} acc={float(it['accuracy']):.3f}\n<<<\n{trunc(it['prompt'])}\n>>>"
+            )
+
+    if include_worst:
+        worst = (data.get("worst") or [])[:worst_n]
+        if worst:
+            lines.append("Stage1 WORST prompt leaderboard:")
+            for i, it in enumerate(worst, 1):
+                lines.append(
+                    f"#{i} acc={float(it['accuracy']):.3f}\n<<<\n{trunc(it['prompt'])}\n>>>"
+                )
+
+    if not lines:
+        return ""
+
+    lines.append(
+        "Rules: Learn patterns from these prompts. "
+        "Do NOT copy them verbatim. Generalize improvements."
+    )
+    return "\n\n".join(lines)
+
+
+def inject_prompt_queues_into_system(system_msg: str, cfg: dict) -> str:
+    if not cfg or not cfg.get("enabled", False):
+        return system_msg
+
+    queue_text = format_stage1_queues_for_system(
+        path=cfg.get("path", "stage1_prompt_queues.json"),
+        include_worst=bool(cfg.get("include_worst", False)),
+        best_n=int(cfg.get("k_best", 5)),
+        worst_n=int(cfg.get("k_worst", 5)),
+        max_chars_each=int(cfg.get("max_chars_each", 700)),
+    )
+
+    if not queue_text:
+        return system_msg
+
+    return system_msg + "\n\n" + queue_text
 
 def _worker_init(config_dict: dict, evaluation_file: str, parent_env: dict = None) -> None:
     """Initialize worker process with necessary components"""
@@ -181,6 +253,19 @@ def _run_iteration_worker(
             program_artifacts=parent_artifacts,
             feature_dimensions=db_snapshot.get("feature_dimensions", []),
         )
+        # --- Inject Stage1 prompt queues into reflection system message ---
+        qcfg = {
+            "enabled": os.environ.get("OE_QUEUE_ENABLED", "false").lower() == "true",
+            "include_worst": os.environ.get("OE_QUEUE_INCLUDE_WORST", "false").lower() == "true",
+            "path": os.environ.get("OE_QUEUE_PATH", "stage1_prompt_queues.json"),
+            "k_best": int(os.environ.get("OE_QUEUE_K_BEST", "5")),
+            "k_worst": int(os.environ.get("OE_QUEUE_K_WORST", "5")),
+            "max_chars_each": int(os.environ.get("OE_QUEUE_MAX_CHARS_EACH", "700")),
+            }
+        prompt["system"] = inject_prompt_queues_into_system(prompt["system"], qcfg)
+
+        if isinstance(qcfg, dict):
+            prompt["system"] = inject_prompt_queues_into_system(prompt["system"], qcfg)
 
         iteration_start = time.time()
 

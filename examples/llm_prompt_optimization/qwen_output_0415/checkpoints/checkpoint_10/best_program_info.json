@@ -1,0 +1,15 @@
+{
+  "id": "3ea0de2a-923e-4e28-8f3a-0ea7974a0f95",
+  "generation": 1,
+  "iteration": 3,
+  "current_iteration": 10,
+  "metrics": {
+    "combined_score": 0.2,
+    "null_prediction_rate": 0.5,
+    "prompt_length": 358,
+    "reasoning_strategy": 0.6
+  },
+  "language": "text",
+  "timestamp": 1776241015.954385,
+  "saved_at": 1776242918.734949
+}

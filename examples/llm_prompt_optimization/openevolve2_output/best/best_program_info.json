@@ -1,0 +1,16 @@
+{
+  "id": "e9474243-0df0-4366-a943-6cb2d7740968",
+  "generation": 2,
+  "iteration": 7,
+  "timestamp": 1766971043.4360914,
+  "parent_id": "ac2b2aab-44f2-410c-ba1f-a64487afa893",
+  "metrics": {
+    "combined_score": 0.7,
+    "prompt_length": 337,
+    "reasoning_strategy": 0.6,
+    "stage2_passed": 0.0,
+    "timeout": true
+  },
+  "language": "text",
+  "saved_at": 1766999969.938755
+}

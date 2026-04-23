@@ -2,6 +2,8 @@ results/
 examples/lm_eval/prompts/system_message.txt
 examples/lm_eval/prompts/evaluator_system_message.txt
 
+examples/llm_prompt_optimization/code/
+examples/llm_prompt_optimization/activation_map/
 # Python
 __pycache__/
 *.py[cod]
@@ -53,3 +55,6 @@ htmlcov/
 # For SR
 secrets.yaml
 problems
+
+examples/llm_prompt_optimization/lite.py
+examples/llm_prompt_optimization/check.ipynb

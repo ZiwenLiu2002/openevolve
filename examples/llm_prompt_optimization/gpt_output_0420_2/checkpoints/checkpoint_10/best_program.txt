@@ -1,0 +1,12 @@
+I'll solve this math problem using a structured mathematical approach.
+
+Problem: {input_text}
+
+My solution methodology:
+1) Analyze the problem to determine what's being asked
+2) Identify all numerical values and their mathematical relationships
+3) Select the appropriate mathematical operations and sequence
+4) Execute calculations methodically with step-by-step precision
+5) Validate the result by checking both logic and arithmetic
+
+I'll demonstrate my mathematical reasoning process and provide the final numerical answer after "####".

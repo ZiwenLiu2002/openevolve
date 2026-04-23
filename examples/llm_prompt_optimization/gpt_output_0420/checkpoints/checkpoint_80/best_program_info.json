@@ -1,0 +1,17 @@
+{
+  "id": "4a42b3ea-4f5f-4a1f-ac33-cf2643038854",
+  "generation": 2,
+  "iteration": 12,
+  "current_iteration": 80,
+  "metrics": {
+    "combined_score": 0.5,
+    "null_prediction_rate": 0.5,
+    "prompt_length": 393.0,
+    "reasoning_strategy": 0.6,
+    "parseable_answer_rate": 0.5,
+    "avg_output_tokens": 422.7
+  },
+  "language": "text",
+  "timestamp": 1776667058.6017313,
+  "saved_at": 1776670561.2967505
+}

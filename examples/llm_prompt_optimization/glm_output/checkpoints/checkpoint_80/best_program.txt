@@ -1,0 +1,12 @@
+I'll solve this math problem with clear logical steps.
+
+Problem: {input_text}
+
+Solution approach:
+1) Identify what needs to be calculated
+2) Find all relevant numbers and operations
+3) Work through calculations systematically
+4) Double-check my arithmetic
+5) Confirm the answer fits the question
+
+I'll show my work clearly and provide the final answer after "####".

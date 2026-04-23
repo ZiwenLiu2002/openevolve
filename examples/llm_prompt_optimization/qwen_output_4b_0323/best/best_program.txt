@@ -1,0 +1,12 @@
+I'll solve this math problem step-by-step with clear reasoning.
+
+Problem: {input_text}
+
+My systematic approach:
+1) Understand exactly what the question asks
+2) Identify all key numbers and their relationships
+3) Choose the correct mathematical operations needed
+4) Work through calculations methodically and precisely
+5) Double-check that my solution answers the original question
+
+I'll show my complete work and reasoning, then provide the final numeric answer after "####".

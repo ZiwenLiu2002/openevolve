@@ -1,0 +1,8 @@
+model_list:
+  - model_name: claude-sonnet-evolver
+    litellm_params:
+      model: anthropic/claude-sonnet-4-20250514
+      api_key: os.environ/ANTHROPIC_API_KEY
+
+litellm_settings:
+  drop_params: true

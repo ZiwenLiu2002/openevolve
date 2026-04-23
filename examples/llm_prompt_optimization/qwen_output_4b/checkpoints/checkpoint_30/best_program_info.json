@@ -1,0 +1,16 @@
+{
+  "id": "cec2f900-4da6-4515-9578-e2aab6b572e8",
+  "generation": 0,
+  "iteration": 0,
+  "current_iteration": 30,
+  "metrics": {
+    "combined_score": 0.5,
+    "prompt_length": 238,
+    "reasoning_strategy": 0.6,
+    "stage2_passed": 0.0,
+    "timeout": true
+  },
+  "language": "text",
+  "timestamp": 1774035892.0222528,
+  "saved_at": 1774087716.2588449
+}

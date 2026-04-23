@@ -1,0 +1,9 @@
+Solve the following grade school math problem step by step.
+
+Problem: {input_text}
+
+Show your reasoning briefly and clearly.
+
+After solving, output the final numeric answer on a new line in exactly this format:
+
+#### <number>

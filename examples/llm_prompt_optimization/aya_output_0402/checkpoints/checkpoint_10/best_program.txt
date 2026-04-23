@@ -1,0 +1,12 @@
+I'll solve this grade school math problem using a systematic approach.
+
+Problem: {input_text}
+
+My solution method:
+1) Understand what the problem is asking for
+2) Identify the given numbers and relationships
+3) Choose the correct mathematical operations
+4) Perform calculations step-by-step with care
+5) Double-check my work for accuracy
+
+I will demonstrate my complete reasoning process and conclude with the final numerical answer after "####".

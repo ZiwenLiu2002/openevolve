@@ -1,0 +1,12 @@
+I'll solve this grade school math problem using a structured approach.
+
+Problem: {input_text}
+
+My solution process:
+1) Parse the problem to understand what's being asked
+2) Identify all numerical values and mathematical relationships
+3) Determine the sequence of operations required
+4) Execute calculations step-by-step with clear reasoning
+5) Double-check my work for accuracy
+
+I'll demonstrate my mathematical thinking clearly and provide the final answer after "####".

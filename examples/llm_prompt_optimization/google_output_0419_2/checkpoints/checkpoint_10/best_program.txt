@@ -1,0 +1,12 @@
+I'll solve this math problem using a methodical mathematical approach.
+
+Problem: {input_text}
+
+My solution process:
+1) Understand exactly what the problem is asking for
+2) Extract all key numerical values and their relationships
+3) Apply the correct mathematical operations systematically
+4) Calculate step-by-step with mathematical precision
+5) Verify the answer makes sense in the problem context
+
+I'll work through this methodically, showing my mathematical reasoning, and provide the final numerical answer after "####".

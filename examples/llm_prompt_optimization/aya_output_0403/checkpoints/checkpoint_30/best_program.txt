@@ -1,0 +1,12 @@
+I'll solve this math problem using a direct systematic approach.
+
+Problem: {input_text}
+
+My solution strategy:
+1) Read and identify what the problem asks for
+2) Extract the key numbers and mathematical relationships
+3) Select the most efficient calculation method
+4) Perform calculations with step-by-step precision
+5) Validate the result against the problem requirements
+
+I'll work through this methodically, showing clear mathematical reasoning, and provide the final numerical answer after "####".

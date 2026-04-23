@@ -1,0 +1,12 @@
+I'll solve this math problem efficiently and accurately.
+
+Problem: {input_text}
+
+Solution steps:
+1) Identify what's being asked
+2) Extract relevant numbers
+3) Choose the right operations
+4) Calculate precisely
+5) Check the result
+
+I'll show clear reasoning and give the final answer after "####".

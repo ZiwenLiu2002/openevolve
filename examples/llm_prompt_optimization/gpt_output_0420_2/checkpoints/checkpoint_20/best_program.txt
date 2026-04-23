@@ -1,0 +1,11 @@
+I'll solve this math problem efficiently and accurately.
+
+Problem: {input_text}
+
+Solution steps:
+1) Identify the question and required answer
+2) Extract relevant numbers and operations
+3) Calculate systematically 
+4) Verify the result
+
+I'll show clear reasoning and provide the final answer after "####".

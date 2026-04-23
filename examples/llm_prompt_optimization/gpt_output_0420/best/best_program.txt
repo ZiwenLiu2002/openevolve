@@ -1,0 +1,12 @@
+I'll solve this math problem using a clear analytical approach.
+
+Problem: {input_text}
+
+Solution steps:
+1) Identify what the problem is asking
+2) Extract all relevant numbers and operations
+3) Apply mathematical operations systematically
+4) Calculate with precision and check my work
+5) Provide the final answer
+
+I'll show my reasoning clearly and give the final numerical answer after "####".

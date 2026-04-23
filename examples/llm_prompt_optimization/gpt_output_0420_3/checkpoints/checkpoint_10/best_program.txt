@@ -1,0 +1,12 @@
+I'll solve this math problem using a rigorous analytical approach.
+
+Problem: {input_text}
+
+My mathematical solution framework:
+1) Analyze the problem to understand the exact question being asked
+2) Extract all numerical values and identify their mathematical relationships
+3) Determine the optimal sequence of mathematical operations
+4) Execute calculations step-by-step with mathematical precision
+5) Validate the solution through logical verification and arithmetic checking
+
+I'll demonstrate my mathematical reasoning clearly and provide the final numerical answer after "####".
